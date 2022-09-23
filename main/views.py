@@ -17,4 +17,9 @@ def date_now(request):
 def films(request , id):
     # film = models.Film.objects.all()
     film = get_object_or_404(models.Film, id=id)
-    return render(request, "films.html", {"film": film}, )
+    return render(request, "films.html", {"film":film})
+
+
+def rewiev(request , id):
+    rewiev = get_object_or_404(models.Rewiev.objects.filter(id_pole=id))
+    return render(request, "rewievs_film.html",{"rewiev":rewiev})
