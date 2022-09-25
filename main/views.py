@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 import datetime
 from . import models
@@ -13,6 +14,10 @@ def date_now(request):
    a = datetime.datetime.now()
    return render(request, 'date_now.html', {'dat': a})
 
+
+def film_show(request):
+    shows = models.Film.objects.all()
+    return render(request, "films_show.html", {"shows":shows})
 
 def films(request , id):
     # film = models.Film.objects.all()

@@ -5,6 +5,7 @@ class Film(models.Model):
     producer = models.CharField(max_length=50)
     rate = models.PositiveIntegerField(default=0, max_length=10, verbose_name="Рейтинг")
     duration = models.DurationField(verbose_name="Продолжительность")
+    image = models.ImageField(upload_to="" , null=True)
 
 
     def __str__(self):

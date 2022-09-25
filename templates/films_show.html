@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все Фильмы</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body>
+    {% for show in shows %}
+        <img src="{{ show.image.url }}" alt="...">
+        <h2>Название: {{ show.title}}</h2>
+        <p>Режиссер: {{ show.producer }}</p>
+        <p>Рейтинг: {{ show.rate}}</p>
+        <p>Продолжительность: {{ show.duration }}</p>
+    {% endfor %}
+</body>
+</html>
