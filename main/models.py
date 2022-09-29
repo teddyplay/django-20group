@@ -17,8 +17,15 @@ class Rewiev(models.Model):
     text = models.TextField(max_length=500, verbose_name="Текст")
 
     def __str__(self):
-        return self.id_pole
+        return str(self.id_pole)
 
+class FilmComment(models.Model):
+    text = models.TextField(max_length=1000)
+    films = models.ForeignKey(Film,
+                              on_delete=models.CASCADE, related_name="film_comment",default="")
+
+    def __str__(self):
+        return str(self.films.title)
     # producer = models.CharField(max_length=100, verbose_name="Продюссер")
     # rate = models.CharField(choices=choices, max_length=255, default=0.0)
     # duration = models.DurationField(verbose_name="продолжительность")

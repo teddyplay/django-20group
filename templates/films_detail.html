@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все Фильмы</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body>
+<div>
+
+            <h2>Название: {{ film.title}}</h2>
+            <p>Режиссер: {{ film.producer }}</p>
+            <p>Рейтинг: {{ film.rate}}</p>
+            <p>Продолжительность: {{ film.duration }}</p>
+
+
+</div>
+<div>
+
+     {% for i in film.film_comment.all %}
+            <h4>Комментарии<p>{{ i.text }}</p></h4>
+        {% endfor %}
+
+</div>
+
+{#<div>#}
+{#    <h2>Комментарии:</h2>#}
+{#    <ul>#}
+{#        {% for comment in show.film_comment.all %}#}
+{#            <li>#}
+{#                <p>{{ comment.text }}</p>#}
+{#            </li>#}
+{##}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#</div>#}
+{##}
+{#        {% for i in show.film_comment %}#}
+{#            <h2>Название: {{ show.title}}</h2>#}
+{#            <p>Режиссер: {{ show.producer }}</p>#}
+{#            <p>Рейтинг: {{ show.rate}}</p>#}
+{#            <p>Продолжительность: {{ show.duration }}</p>#}
+{##}
+{#        {% endfor %}#}
+{#    {% endfor %}#}
+{#    <p>Коментарии : {{ show.text }}</p>#}
+{##}
+{##}
+{##}
+{#    <h2>Комментарии:</h2>#}
+{#        {% for show in comment  %}#}
+{##}
+{#                <p>{{ comment }}</p>#}
+{##}
+{#        {% endfor %}#}
+
+{#<div>#}
+{#    {% for i in show %}#}
+{#    <p>Коментарии:#}
+{#        {{ show.text }}</p>#}
+{#        <p>{{ film.text}}</p>#}
+{#    {% endfor %}#}
+{#</div>#}
+</body>
+</html>
